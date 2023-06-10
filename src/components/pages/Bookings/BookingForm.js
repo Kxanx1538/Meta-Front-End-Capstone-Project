@@ -9,6 +9,8 @@ const BookingForm = ({
   dispatchOnDateChange,
   submitData
 }) => {
+  const invalidNameErrorMessage = 'Please enter a valid name';
+  const invalidEmailErrorMessage = 'Please enter a valid email address';
   const minimumDate = new Date().toISOString().split('T')[0];
   const defaultTime = availableTimes[0];
   const minimumNumberOfGuests = 1;
@@ -17,9 +19,10 @@ const BookingForm = ({
   const invalidDateErrorMessage = 'Please choose a valid date';
   const invalidTimeErrorMessage = 'Please choose a valid time';
   const invalidOccasionErrorMessage = 'Please choose a valid occasion';
-  const invalidNumberOfGuestsErrorMessage =
-    'Please enter your number of guest';
+  const invalidNumberOfGuestsErrorMessage = 'Please enter your number of guest';
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [date, setDate] = useState(minimumDate);
   const [time, setTime] = useState(defaultTime);
   const [
@@ -32,21 +35,21 @@ const BookingForm = ({
   const isDateValid = () => date !== '';
   const isTimeValid = () => time !== '';
   const isNumberOfGuestsValid = () => {
-    const guests = Number(numberOfGuests);
+  const guests = Number(numberOfGuests);
     return guests >= minimumNumberOfGuests 
     && guests <= maximumNumberOfGuests;
   };
   
   const isOccasionValid = () => occasion !== '';
-  /*const isCommentValid = () => comments === '';  */
 
   const isFormValid = () => 
-    isDateValid() 
+    isNameValid()
+    && isEmailValid()
+    && isDateValid() 
     && isTimeValid() 
     && isNumberOfGuestsValid() 
     && isOccasionValid();
-    /*&& isCommentValid(); */
-  
+
   const handleDateChange = e => {
     setDate(e.target.value);
     dispatchOnDateChange(e.target.value);
@@ -56,11 +59,47 @@ const BookingForm = ({
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    submitData({ date, time, numberOfGuests, occasion, comments});
+    submitData({ name, email, date, time, numberOfGuests, occasion, comments});
   };
+  const isNameValid = () => name !== '';
+  const isEmailValid = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 
   return (
     <form onSubmit={handleFormSubmit}>
+
+      <FormField
+        label="Name"
+        htmlFor="booking-name"
+        hasError={!isNameValid()}
+        errorMessage={invalidNameErrorMessage}
+      >
+        <input
+          type="text"
+          id="booking-name"
+          name="booking-name"
+          value={name}
+          required={true}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </FormField>
+      
+      <FormField
+        label="Email"
+        htmlFor="booking-email"
+        hasError={!isEmailValid()}
+        errorMessage={invalidEmailErrorMessage}
+      >
+        <input
+          type="email"
+          id="booking-email"
+          name="booking-email"
+          value={email}
+          required={true}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </FormField>
+      
       <FormField 
         label="Date" 
         htmlFor="booking-date" 
