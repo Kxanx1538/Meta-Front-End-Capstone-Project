@@ -13,4 +13,5 @@
 
 
 # Booking Form
-<img width="1184" alt="Screen Shot 2023-06-10 at 12 24 56 AM" src="https://github.com/Kxanx1538/Meta-Front-End-Capstone-Project/assets/121854477/1a5426cc-7e34-431a-a3f7-3e793f3e10f1">
+
+<img width="918" alt="Screen Shot 2023-06-10 at 1 08 39 AM" src="https://github.com/Kxanx1538/Meta-Front-End-Capstone-Project/assets/121854477/2b819431-4aba-45af-81f8-cb5cd7473b62">
