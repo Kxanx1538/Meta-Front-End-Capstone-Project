@@ -68,6 +68,30 @@ const BookingForm = ({
   return (
     <form onSubmit={handleFormSubmit}>
 
+      <div className="dining-options">
+        <div className="option">
+          <input
+          type="radio"
+          id="indoor-dining"
+          name="dining-option"
+          value="Indoor Dining"
+          checked={occasion === 'Indoor Dining'}
+          onChange={(e) => setOccasion(e.target.value)}
+          />
+          <label htmlFor="indoor-dining">Indoor Dining</label>
+        </div>
+        <div className="option">
+          <input
+          type="radio"
+          id="outdoor-dining"
+          name="dining-option"
+          value="Outdoor Dining"
+          checked={occasion === 'Outdoor Dining'}
+          onChange={(e) => setOccasion(e.target.value)}/>
+          <label htmlFor="outdoor-dining">Outdoor Dining</label>
+        </div>
+      </div>
+
       <FormField
         label="Name"
         htmlFor="booking-name"
@@ -83,7 +107,7 @@ const BookingForm = ({
           onChange={(e) => setName(e.target.value)}
         />
       </FormField>
-      
+
       <FormField
         label="Email"
         htmlFor="booking-email"
@@ -116,6 +140,7 @@ const BookingForm = ({
           onChange={handleDateChange}
         />
       </FormField>
+
       <FormField 
         label="Time" 
         htmlFor="booking-time" 
@@ -137,7 +162,7 @@ const BookingForm = ({
         </select>
       </FormField>
       <FormField 
-        label="Number of guests" 
+        label="Number of Diners" 
         htmlFor="booking-number-guests" 
         hasError={!isNumberOfGuestsValid()} 
         errorMessage={invalidNumberOfGuestsErrorMessage}
@@ -175,7 +200,7 @@ const BookingForm = ({
       </FormField>
 
       <FormField
-        label="Comments"
+        label="Special Request"
         htmlFor="booking-comments"
         hasError={false}
         errorMessage={''}

@@ -79,6 +79,9 @@ const Footer = () => {
           )}
         </div>
       </div>
+      <div>
+        <p>Designed by Ayisha</p>
+      </div>
     </footer>
   );
 };

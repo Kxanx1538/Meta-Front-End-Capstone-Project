@@ -101,7 +101,7 @@ describe('Booking form', () => {
     const submitButton = screen.getByRole('button');
 
     expect(errorMessage).toBeInTheDocument();
-    expect(errorMessage).toHaveTextContent('Please enter a number between 1 and 10');
+    expect(errorMessage).toHaveTextContent('Please enter a number between 1 and 200');
     expect(submitButton).toBeDisabled();
   });
 });

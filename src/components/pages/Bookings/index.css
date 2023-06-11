@@ -37,3 +37,14 @@
   padding: 1.875rem 0 1.875rem 0;
   text-align: center;
 }
+
+
+.dining-options {
+  display: flex;
+  justify-content: center;
+  gap: 6.8rem;
+}
+
+.option {
+  margin-right: 20px;
+}
