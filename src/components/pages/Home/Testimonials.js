@@ -9,13 +9,13 @@ import './Testimonials.css';
 
 const customers = [
   {
-    fulltName: 'Sarah T.',
+    fullName: 'Sarah T.',
     image: customer1Image,
     rating: [1, 1, 1, 1, 0.5],
     says: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
   },
   {
-    fulltName: 'Bart A.',
+    fullName: 'Bart A.',
     image: customer2Image,
     rating: [1, 1, 1, 1, 1],
     says: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
