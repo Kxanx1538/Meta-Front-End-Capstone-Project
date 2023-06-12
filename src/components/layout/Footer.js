@@ -22,9 +22,9 @@ import './Footer.css';
 
 
 const contacts = [
-   { icon: faPhone, info: '(212) 743-1000', },
-  { icon: faLocationDot, info: '100 Central Park, New York, New York', },
-  { icon: faEnvelope, info: 'customersupport@littlelemon.com', },
+  { icon: faPhone, info: '(212) 743-1000', },
+  { icon: faEnvelope, info: 'customer@llelemon.com', },
+  { icon: faLocationDot, info: '100 Central Park, NY, NY', },
 ];
 
 const socials = [
