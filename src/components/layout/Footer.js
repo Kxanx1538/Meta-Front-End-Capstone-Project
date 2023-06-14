@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>Designed by Ayisha</p>
+         <p id="developer">Designed by Ayisha</p>
       </div>
     </footer>
   );
