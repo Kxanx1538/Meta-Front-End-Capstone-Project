@@ -11,6 +11,7 @@ const BookingForm = ({
 }) => {
   const invalidNameErrorMessage = 'Please enter a valid name';
   const invalidEmailErrorMessage = 'Please enter a valid email address';
+  const invalidPhoneNumerErrorMessage = 'Please enter a valid phone number (e.g., 123-456-7890)';
   const minimumDate = new Date().toISOString().split('T')[0];
   const defaultTime = availableTimes[0];
   const minimumNumberOfGuests = 1;
@@ -23,6 +24,7 @@ const BookingForm = ({
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [date, setDate] = useState(minimumDate);
   const [time, setTime] = useState(defaultTime);
   const [
@@ -41,10 +43,15 @@ const BookingForm = ({
   };
   
   const isOccasionValid = () => occasion !== '';
+  
+
+
+  const isPhoneNumberValid = () => /^\d{3}-\d{3}-\d{4}$/.test(phoneNumber);
 
   const isFormValid = () => 
     isNameValid()
     && isEmailValid()
+    && isPhoneNumberValid()
     && isDateValid() 
     && isTimeValid() 
     && isNumberOfGuestsValid() 
@@ -59,7 +66,7 @@ const BookingForm = ({
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    submitData({ name, email, date, time, numberOfGuests, occasion, comments});
+    submitData({ name, email, phoneNumber, date, time, numberOfGuests, occasion, comments});
   };
   const isNameValid = () => name !== '';
   const isEmailValid = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -123,7 +130,24 @@ const BookingForm = ({
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormField>
-      
+
+      <FormField
+        label="Phone Number"
+        htmlFor="booking-phone-number"
+        hasError={!isPhoneNumberValid()}
+        errorMessage={invalidPhoneNumerErrorMessage}
+      >
+        <input
+          type="tel"
+          id="booking-phone-number"
+          name="booking-phone-number"
+          value={phoneNumber}
+          required={true}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+        />
+      </FormField>
+
+
       <FormField 
         label="Date" 
         htmlFor="booking-date" 
