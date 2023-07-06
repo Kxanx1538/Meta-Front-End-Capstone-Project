@@ -1,15 +1,20 @@
-
-import {
-  Route, 
-  Routes
-} from 'react-router-dom';
-import pages from './utils/pages';
-import Layout from './components/layout/Layout';
-import Home from './components/pages/Home';
-import Bookings from './components/pages/Bookings';
 import ConfirmedBooking from './components/pages/Bookings/ConfirmedBooking';
-import NotFound from './components/pages/NotFound';
 import UnderConstruction from './components/pages/UnderConstruction';
+import OurStory from './components/pages/Home/OurStory';
+import NotFound from './components/pages/NotFound';
+import Bookings from './components/pages/Bookings';
+import Layout from './components/layout/Layout';
+import {Route, Routes} from 'react-router-dom';
+import Home from './components/pages/Home';
+import pages from './utils/pages';
+
+
+
+
+
+
+
+
 
 
 const App = () => {
