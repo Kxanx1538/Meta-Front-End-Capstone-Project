@@ -20,7 +20,7 @@ const App = () => {
           <Route path={pages.get('home').path} element={<Home />} />
           <Route 
             path={pages.get('about').path} 
-            element={<UnderConstruction />} 
+            element={<OurStory />} 
           />
           <Route 
             path={pages.get('menu').path} 
