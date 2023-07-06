@@ -11,12 +11,6 @@ import pages from './utils/pages';
 
 
 
-
-
-
-
-
-
 const App = () => {
   return (
     <>
