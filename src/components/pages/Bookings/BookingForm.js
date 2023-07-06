@@ -232,6 +232,7 @@ const BookingForm = ({
         <textarea
           id="booking-comments"
           name="booking-comments"
+          placeholder="Add your request"
           value={comments}
           onChange={(e) => setComment(e.target.value)}
         ></textarea>
