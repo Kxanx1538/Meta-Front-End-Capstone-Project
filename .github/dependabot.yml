@@ -3,9 +3,21 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
+
+
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"                     # Where your package.json is located
     schedule:
-      interval: "weekly"
+      interval: "weekly"              # Could also use "daily", "monthly"
+      day: "monday"                   # Optional: which day of the week
+    rebase-strategy: auto             # Keeps PRs up to date
+    open-pull-requests-limit: 5       # Avoids cluttering with too many PRs
+    commit-message:
+      prefix: "fix(deps)"             # Conventional commit style
+    labels:
+      - "dependencies"
+      - "security"
+    reviewers:
+      - "your-github-username"        # Optional: auto-request reviews
