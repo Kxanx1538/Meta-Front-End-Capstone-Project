@@ -1,6 +1,15 @@
 
 # Meta Front-End Developer Captstone Project
 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/<uuid>/deploy-status)](https://app.netlify.com/sites/https://little-lemon-restaurant-with-react.netlify.app/deploys)
+
+
+# My Project Title
+Description of your project...
+
+
+
 # A link to the project website
 https://little-lemon-restaurant-with-react.netlify.app/
 

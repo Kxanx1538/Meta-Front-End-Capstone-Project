@@ -1,0 +1,23 @@
+
+
+##  Auto-Label PRs (e.g. feat:, fix:)
+## You can automate PR labeling via GitHub Actions or with a bot.
+
+## Here’s the quick GitHub Action version:
+
+
+
+name: Auto Label PRs
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto label PRs
+        uses: actions/labeler@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}

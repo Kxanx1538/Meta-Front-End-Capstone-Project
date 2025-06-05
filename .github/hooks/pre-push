@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Prevent pushing directly to main
+protected_branch="main"
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$current_branch" = "$protected_branch" ]; then
+  echo "❌ Direct push to '$protected_branch' is not allowed."
+  echo "✅ Use ./scripts/secure-pr.sh instead."
+  exit 1
+fi
+
+# Optionally run secure-pr.sh automatically
+if [ -x ./scripts/secure-pr.sh ]; then
+  echo "🔒 Running secure-pr.sh before push..."
+  ./scripts/secure-pr.sh auto
+fi
+
+exit 0

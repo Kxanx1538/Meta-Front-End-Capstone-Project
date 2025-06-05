@@ -1,0 +1,19 @@
+
+## Here's a Minimal deploy.yml
+
+## No tokens. No deploy logic. Just a log confirming the trigger.
+
+
+name: Confirm Deploy Trigger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  log-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm deploy
+        run: echo "✅ Deploy triggered (actual deploy handled by Netlify)"
