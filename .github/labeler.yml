@@ -2,12 +2,12 @@
 ## This labels PRs based on branch name prefixes like feat/, fix/, etc.
 
 
-feat:
-  - 'feat/**'
-  - '**/feat/**'
-fix:
-  - 'fix/**'
-  - '**/fix/**'
 chore:
-  - 'chore/**'
-  - '**/chore/**'
+  - '**/*.md'
+  - '.github/**'
+fix:
+  - 'src/**'
+  - 'components/**'
+feat:
+  - 'src/**'
+  - 'pages/**'
