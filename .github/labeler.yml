@@ -1,16 +1,15 @@
 
-
 feat:
-  paths:
-    - "src/**"
-    - "components/**"
+  - paths:
+      - "src/**"
+      - "components/**"
 
 fix:
-  paths:
-    - "src/**"
-    - "pages/**"
+  - paths:
+      - "src/**"
+      - "pages/**"
 
 chore:
-  paths:
-    - "**/*.md"
-    - ".github/**"
+  - paths:
+      - "**/*.md"
+      - ".github/**"
