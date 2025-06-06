@@ -104,6 +104,8 @@ const BookingForm = ({
         htmlFor="booking-name"
         hasError={!isNameValid()}
         errorMessage={invalidNameErrorMessage}
+        errorTestId="error-message-name"
+        
       >
         <input
           type="text"
@@ -120,6 +122,7 @@ const BookingForm = ({
         htmlFor="booking-email"
         hasError={!isEmailValid()}
         errorMessage={invalidEmailErrorMessage}
+        errorTestId="error-message-email"
       >
         <input
           type="email"
@@ -136,6 +139,7 @@ const BookingForm = ({
         htmlFor="booking-phone-number"
         hasError={!isPhoneNumberValid()}
         errorMessage={invalidPhoneNumerErrorMessage}
+        errorTestId="error-message-phone"
       >
         <input
           type="tel"
@@ -153,6 +157,7 @@ const BookingForm = ({
         htmlFor="booking-date" 
         hasError={!isDateValid()} 
         errorMessage={invalidDateErrorMessage}
+        errorTestId="error-message-date"
       >
         <input 
           type="date" 
@@ -170,6 +175,7 @@ const BookingForm = ({
         htmlFor="booking-time" 
         hasError={!isTimeValid()} 
         errorMessage={invalidTimeErrorMessage}
+        errorTestId="error-message-time"
       >
         <select 
           id="booking-time" 
@@ -185,11 +191,13 @@ const BookingForm = ({
           )}
         </select>
       </FormField>
+      
       <FormField 
         label="Number of Diners" 
         htmlFor="booking-number-guests" 
         hasError={!isNumberOfGuestsValid()} 
         errorMessage={invalidNumberOfGuestsErrorMessage}
+        errorTestId="error-message-number-of-diners"
       >
         <input 
           type="number" 
@@ -207,6 +215,7 @@ const BookingForm = ({
         htmlFor="booking-occasion" 
         hasError={!isOccasionValid()} 
         errorMessage={invalidOccasionErrorMessage}
+        errorTestId="error-message-occasion"
       >
         <select 
           id="booking-occasion" 
@@ -228,6 +237,7 @@ const BookingForm = ({
         htmlFor="booking-comments"
         hasError={false}
         errorMessage={''}
+        errorTestId="error-message-special-request"
       >
         <textarea
           id="booking-comments"

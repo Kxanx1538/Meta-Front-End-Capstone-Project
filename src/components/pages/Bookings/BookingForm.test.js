@@ -75,7 +75,7 @@ describe('Booking form', () => {
     const dateInput = screen.getByLabelText(/Date/);
     fireEvent.change(dateInput, { target: { value: '' } });
     fireEvent.blur(dateInput);
-    const errorMessage = screen.getByTestId('error-message');
+    const errorMessage = screen.getByTestId('error-message-date'); // For the date test
     const submitButton = screen.getByRole('button');
 
     expect(errorMessage).toBeInTheDocument();
@@ -97,7 +97,7 @@ describe('Booking form', () => {
     const numberOfGuestsInput = screen.getByLabelText(/Number of guests/);
     fireEvent.change(numberOfGuestsInput, { target: { value: '' } });
     fireEvent.blur(numberOfGuestsInput);
-    const errorMessage = screen.getByTestId('error-message');
+    const errorMessage = screen.getByTestId('error-message-guests'); // For the guests test
     const submitButton = screen.getByRole('button');
 
     expect(errorMessage).toBeInTheDocument();
