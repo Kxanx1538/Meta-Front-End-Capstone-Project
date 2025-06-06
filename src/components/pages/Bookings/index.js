@@ -1,4 +1,4 @@
-import { act, useReducer } from 'react';
+import { useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './index.css';
 import { fetchAPI, submitAPI } from '../../../utils/fakeAPI';
