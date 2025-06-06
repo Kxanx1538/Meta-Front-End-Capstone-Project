@@ -13,6 +13,9 @@ on:
   pull_request:
     types: [opened, edited, synchronize]
 
+permissions:
+  contents: read  # minimal safe default    
+
 jobs:
   label:
     runs-on: ubuntu-latest
