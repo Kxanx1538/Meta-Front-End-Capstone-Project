@@ -94,7 +94,7 @@ describe('Booking form', () => {
       />
     );
 
-    const numberOfGuestsInput = screen.getByLabelText(/Number of guests/);
+    const numberOfGuestsInput = screen.getByLabelText(/Number of Diners/);
     fireEvent.change(numberOfGuestsInput, { target: { value: '' } });
     fireEvent.blur(numberOfGuestsInput);
     const errorMessage = screen.getByTestId('error-message-guests'); // For the guests test
