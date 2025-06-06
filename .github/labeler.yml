@@ -1,12 +1,12 @@
 
 feat:
-  - 'src/**'
-  - 'components/**'
+  - "src/**"
+  - "components/**"
 
 fix:
-  - 'src/**'
-  - 'pages/**'
+  - "src/**"
+  - "pages/**"
 
 chore:
-  - '**/*.md'
-  - '.github/**'
+  - "**/*.md"
+  - ".github/**"
