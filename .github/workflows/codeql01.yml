@@ -71,6 +71,9 @@ jobs:
   pr-check:
     name: Pull Request Compliance Check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
 
     steps:
       - name: Validate PR title formatting (semantic commits)
